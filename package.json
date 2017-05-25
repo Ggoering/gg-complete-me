@@ -1,7 +1,7 @@
 {
-  "name": "TDD",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@ggoering/complete-me",
+  "version": "0.0.1",
+  "description": "js library of priefix-trie",
   "main": "index.js",
   "directories": {
     "test": "tests"
