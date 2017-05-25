@@ -101,6 +101,7 @@ export default class CompleteMe {
       accu.push(nodeObj.completeWord);
       return accu;
     }, [])
+
     return displayWords;
   }
 
@@ -145,14 +146,12 @@ export default class CompleteMe {
     input += currentNode.letter
     let nextLettersArray = Object.keys(currentNode.nextLetters);
 
-    if (!nextLettersArray.length) {
-      resultsArray.push({word: input,
-        frequency: currentNode.timesSelected})
-      return input
-    }
     if (currentNode.completeWord) {
       resultsArray.push({word: input,
         frequency: currentNode.timesSelected})
+      if (!nextLettersArray.length) {
+        return input
+      }
     }
     for (let i = 0; i < nextLettersArray.length; i++) {
       this.nodeSpelunker(input, currentNode.nextLetters[nextLettersArray[i]], resultsArray)
@@ -168,6 +167,7 @@ export default class CompleteMe {
       accu.push(element.word);
       return accu;
     }, [])
+
     return outputArray
   }
 
